@@ -1,0 +1,61 @@
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body {
+  min-height: 100vh;
+  scroll-behavior: smooth;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+ul,
+ol,
+li,
+p,
+pre,
+blockquote,
+figure,
+figcaption,
+hr,
+dl,
+dd {
+  margin: 0;
+  padding: 0;
+}
+
+input,
+textarea,
+button {
+  border: 0;
+  border-radius: 0;
+  outline: none;
+  appearance: none;
+
+  &:hover,
+  &:active,
+  &:focus {
+    outline: none;
+  }
+}
+
+embed,
+iframe,
+img,
+object,
+video {
+  max-width: 100%;
+}
