@@ -9,6 +9,7 @@ html {
 }
 
 body {
+  height: 100vh;
   min-height: 100vh;
   scroll-behavior: smooth;
   text-rendering: optimizeSpeed;
@@ -35,6 +36,10 @@ dl,
 dd {
   margin: 0;
   padding: 0;
+}
+
+#root {
+  height: 100%;
 }
 
 input,
