@@ -1,1 +1,18 @@
-/* your css code */
+@import "styles/variables/colors";
+
+.button {
+  padding: 1rem;
+  border: 1px solid var(--color-border);
+  border-radius: 2px;
+  background-color: var(--btn-primary-bg);
+  color: var(--btn-primary-label);
+  font-family: var(--font-secondary);
+
+  &:hover {
+    background-color: var(--btn-primary-hover);
+  }
+
+  &:active {
+    background-color: var(--btn-primary-active);
+  }
+}

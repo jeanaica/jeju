@@ -1,5 +1,7 @@
 import React from "react";
 
+import Button from "../../components/Button";
+
 import styles from "./Landing.module.scss";
 
 const Landing: React.FC = (props) => {
@@ -11,9 +13,9 @@ const Landing: React.FC = (props) => {
           <span>April 1, 2022</span>
         </div>
         <div className={`${styles["buttons"]} col-7 col-s-9`}>
-          <button>We'll be there!</button>
-          <button>Not sure.</button>
-          <button>We can't come.</button>
+          <Button onClick={() => console.log("EYYY")}>We'll be there!</Button>
+          <Button onClick={() => console.log("Hmmm")}>Not sure.</Button>
+          <Button onClick={() => console.log("Noooo")}>We can't come</Button>
         </div>
       </div>
     </div>

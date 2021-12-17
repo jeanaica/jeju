@@ -6,14 +6,14 @@
   --color-primary-bg: color-mod(var(--color-primary) alpha(20%));
 
   --color-secondary: #b7dfff;
-  --color-secondary-light: color-mod(var(--color-secondary) tint(15%));
-  --color-secondary-dark: color-mod(var(--color-secondary) shade(10%));
+  --color-secondary-light: #c8e6ff;
+  --color-secondary-dark: #b7dfffd8;
   --color-secondary-bg: color-mod(var(--color-secondary) alpha(20%));
 
   --color-accent: #ff7f50;
-  --color-accent-light: color-mod(var(--color-accent) tint(15%));
-  --color-accent-dark: color-mod(var(--color-accent) shade(10%));
-  --color-accent-bg: color-mod(var(--color-accent) alpha(20%));
+  --color-accent-light: #ffa48245;
+  --color-accent-dark: #e26537a1;
+  --color-accent-bg: #ff7f5087;
 
   // shades - generated using chroma.js - 12 steps
   --black: #1d1d21;
@@ -53,10 +53,10 @@
   --form-text-placeholder: var(--gray-4);
 
   /* buttons */
-  --btn-primary-bg: var(--color-secondary);
-  --btn-primary-hover: var(--color-accent-light);
-  --btn-primary-active: var(--color-primary-dark);
-  --btn-primary-label: var(--primary);
+  --btn-primary-bg: var(--color-secondary-light);
+  --btn-primary-hover: var(--color-accent-bg);
+  --btn-primary-active: var(--color-accent-dark);
+  --btn-primary-label: var(--color-primary);
 
   /* icons */
   --color-icon-primary: var(--gray-4);

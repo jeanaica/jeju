@@ -39,6 +39,8 @@
       var(--text-scale-ratio) * var(--text-scale-ratio) *
       var(--text-scale-ratio)
   );
+
+  --heading-font-weight: 500;
 }
 
 @include breakpoint(md) {
@@ -63,7 +65,7 @@ form legend {
   margin-bottom: var(--space-xxs);
   line-height: var(--heading-line-height);
   font-family: var(--font-primary);
-  --heading-font-weight: 700;
+  font-weight: var(--heading-font-weight);
 }
 
 // font family
