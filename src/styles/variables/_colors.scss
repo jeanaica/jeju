@@ -11,7 +11,7 @@
   --color-secondary-bg: color-mod(var(--color-secondary) alpha(20%));
 
   --color-accent: #ff7f50;
-  --color-accent-light: #ffa48245;
+  --color-accent-light: #ffa482cf;
   --color-accent-dark: #e26537a1;
   --color-accent-bg: #ff7f5087;
 
@@ -34,8 +34,9 @@
   --color-text: var(--gray-10);
   --color-text-heading: var(--color-primary);
   --color-text-subtle: var(--gray-6);
-  --color-link: var(--color-primary);
-  --color-link-visited: var(--color-primary-dark);
+  --color-link: var(--color-secondary);
+  --color-link-hover: var(--color-primary);
+  --color-link-active: var(--color-accent);
   --color-mark: var(--color-accent-bg);
   --color-blockquote-border: var(--gray-2);
 

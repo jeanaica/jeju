@@ -116,9 +116,15 @@ p {
 
 a {
   color: var(--color-link);
+  text-decoration: none;
 
-  &:visited {
-    color: var(--color-link-visited);
+  &:hover {
+    color: var(--color-link-hover);
+  }
+
+  &:active {
+    color: var(--color-link-active);
+    text-decoration: underline;
   }
 }
 
