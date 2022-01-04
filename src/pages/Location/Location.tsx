@@ -4,7 +4,7 @@ import PlaceIcon from "@mui/icons-material/Place";
 import EventIcon from "@mui/icons-material/Event";
 import LinkIcon from "@mui/icons-material/Link";
 
-import Title from "../../../components/Title";
+import Title from "../../components/Title";
 
 import styles from "./Location.module.scss";
 
