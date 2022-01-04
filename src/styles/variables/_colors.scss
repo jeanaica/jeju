@@ -34,9 +34,12 @@
   --color-text: var(--gray-10);
   --color-text-heading: var(--color-primary);
   --color-text-subtle: var(--gray-6);
-  --color-link: var(--color-secondary);
+  --color-link: var(--color-accent);
   --color-link-hover: var(--color-primary);
-  --color-link-active: var(--color-accent);
+  --color-link-active: var(--color-secondary);
+  --color-nav-link: var(--color-secondary);
+  --color-nav-link-hover: var(--color-primary);
+  --color-nav-link-active: var(--color-accent);
   --color-mark: var(--color-accent-bg);
   --color-blockquote-border: var(--gray-2);
 

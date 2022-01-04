@@ -9,6 +9,20 @@
   width: 63%;
   position: absolute;
   height: 100%;
+
+  a {
+    color: var(--color-nav-link);
+    text-decoration: none;
+
+    &:hover {
+      color: var(--color-nav-link-hover);
+    }
+
+    &:active {
+      color: var(--color-nav-link-active);
+      text-decoration: underline;
+    }
+  }
 }
 
 .link {
