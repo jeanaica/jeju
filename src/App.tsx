@@ -5,7 +5,7 @@ import "./App.scss";
 
 import Layout from "./components/Layout";
 import Landing from "./pages/Landing";
-import Location from "./pages/Landing/Location";
+import Location from "./pages/Location";
 import Story from "./pages/Story";
 
 function App() {
