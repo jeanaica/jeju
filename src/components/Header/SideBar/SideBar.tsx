@@ -19,7 +19,7 @@ const SideBar: React.FC<Props> = ({ showMenu, marginTop }) => {
     if (showMenu !== isInitialLoad) {
       setInitialLoad(true);
     }
-  }, [showMenu]);
+  }, [isInitialLoad, showMenu]);
 
   return (
     <div

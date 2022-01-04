@@ -1,7 +1,7 @@
 import React from "react";
 import { timeline } from "./timeline";
 import TimelineItem from "./TimelineItem";
-import AllInclusiveIcon from "@mui/icons-material/AllInclusive";
+// import AllInclusiveIcon from "@mui/icons-material/AllInclusive";
 
 import styles from "./TimelineStory.module.scss";
 
