@@ -5,6 +5,7 @@ import "./App.scss";
 
 import Layout from "./components/Layout";
 import Landing from "./pages/Landing";
+import Location from "./pages/Landing/Location";
 import Story from "./pages/Story";
 
 function App() {
@@ -14,6 +15,7 @@ function App() {
       <Route path="/login" element={<div>Login</div>} />
       <Route element={<Layout />}>
         <Route path="/story" element={<Story />} />
+        <Route path="/location" element={<Location />} />
       </Route>
     </Routes>
   );

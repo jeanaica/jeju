@@ -3,8 +3,8 @@
 
 :root {
   // font family
-  --font-primary: "Open Sans", sans-serif;
-  --font-secondary: "Quicksand", sans-serif;
+  --font-primary: "Quicksand", sans-serif;
+  --font-secondary: "Open Sans", sans-serif;
 
   // font size
   --text-base-size: 1rem; // body font-size
@@ -110,7 +110,9 @@ small {
   font-size: var(--text-xs);
 }
 
-p {
+p,
+span {
+  font-size: var(--text-sm);
   line-height: var(--body-line-height);
 }
 

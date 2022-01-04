@@ -1,0 +1,21 @@
+@import "styles/variables/colors";
+
+.container {
+  display: flex;
+}
+
+.timeline-container {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  margin: 40px 0;
+}
+
+.timeline-container::after {
+  background-color: var(--color-primary);
+  content: "";
+  position: absolute;
+  left: calc(50% - 2px);
+  width: 4px;
+  height: 100%;
+}

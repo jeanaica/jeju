@@ -33,7 +33,7 @@ const Nav: React.FC<Props> = ({ onClick, showMenu, headerRef }) => {
       </div>
 
       <div className={`${styles["title"]}`}>
-        <h3 className={`${styles["title-text"]}`}>Je | Ju</h3>
+        <h3 className={`${styles["title-text"]} font-secondary`}>Je | Ju</h3>
       </div>
     </nav>
   );

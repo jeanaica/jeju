@@ -23,11 +23,14 @@ const SideBar: React.FC<Props> = ({ showMenu, marginTop }) => {
 
   return (
     <div
-      style={!isInitialLoad ? { display: "none" } : { display: "flex" }}
+      style={
+        !isInitialLoad
+          ? { display: "none" }
+          : { display: "flex", height: `calc(100% - ${marginTop}px)` }
+      }
       className={`${styles["nav-link"]} 
       ${showMenu ? styles["visible"] : styles["hidden"]}`}
     >
-      <div style={{ height: marginTop }}></div>
       <Link to="/story" className={`${styles["link"]}`}>
         <span>Our Story</span>
       </Link>

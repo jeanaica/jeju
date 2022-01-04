@@ -1,18 +1,25 @@
-.story {
+.location {
   margin: 3rem;
   display: flex;
   flex-direction: column;
 }
 
-.header {
-  h3 {
-    margin-bottom: 0;
-    letter-spacing: 8px;
-  }
+.content {
+  margin-top: 2rem;
+  margin-left: 1rem;
+}
 
-  span {
-    letter-spacing: 2px;
+.info {
+  display: flex;
+
+  svg {
+    margin-right: 1rem;
   }
+}
+
+.place {
+  display: flex;
+  flex-direction: column;
 }
 
 .icon {

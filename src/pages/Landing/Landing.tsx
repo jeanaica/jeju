@@ -9,7 +9,7 @@ const Landing: React.FC = (props) => {
     <div className={`${styles["landing"]}`}>
       <div className={`${styles["container"]}`}>
         <div className={`${styles["header"]}`}>
-          <h1 className="text--xxxl">Je | Ju</h1>
+          <h1 className={`${styles["nav-header"]} text--xxxl`}>Je | Ju</h1>
           <span>April 1, 2022</span>
         </div>
         <div className={`${styles["buttons"]} col-7 col-s-9`}>

@@ -1,0 +1,24 @@
+@import "styles/variables/colors";
+
+.footer {
+  grid-area: footer;
+  background-color: var(--color-primary);
+  color: var(--color-secondary);
+  padding: 2rem;
+  text-align: center;
+
+  a:hover {
+    color: var(--color-accent-light);
+  }
+}
+
+.back-to-top {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.icon {
+  font-size: 3rem !important;
+}
