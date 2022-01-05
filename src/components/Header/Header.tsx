@@ -33,7 +33,11 @@ const Header: React.FC = () => {
   return (
     <div ref={wrapperRef} className={`${styles["header-container"]}`}>
       <Nav onClick={onMenuClick} showMenu={showMenu} headerRef={headerRef} />
-      <SideBar showMenu={showMenu} marginTop={marginTop} />
+      <SideBar
+        showMenu={showMenu}
+        marginTop={marginTop}
+        onMenuClick={onMenuClick}
+      />
     </div>
   );
 };
