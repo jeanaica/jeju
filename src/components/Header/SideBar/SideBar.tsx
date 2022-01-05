@@ -34,8 +34,8 @@ const SideBar: React.FC<Props> = ({ showMenu, marginTop }) => {
       <Link to="/story" className={`${styles["link"]}`}>
         <span>Our Story</span>
       </Link>
-      <Link to="/location" className={`${styles["link"]}`}>
-        <span>Location</span>
+      <Link to="/wedding" className={`${styles["link"]}`}>
+        <span>{`Ceremony & Reception`}</span>
       </Link>
       <Link to="/rsvp" className={`${styles["link"]}`}>
         <span>Confirmation</span>
@@ -46,7 +46,7 @@ const SideBar: React.FC<Props> = ({ showMenu, marginTop }) => {
       <Link to="/faq" className={`${styles["link"]}`}>
         <span>FAQs</span>
       </Link>
-      <Link to="/contact" className={`${styles["link"]}`}>
+      <Link to="/contact-us" className={`${styles["link"]}`}>
         <span>Contact Us</span>
       </Link>
     </div>

@@ -1,0 +1,20 @@
+.contact {
+  margin: 3rem;
+  display: flex;
+  flex-direction: column;
+  height: 70vh;
+}
+
+.content {
+  margin-top: 2rem;
+  margin-left: 1rem;
+}
+
+.info {
+  display: flex;
+  margin-bottom: 1rem;
+
+  svg {
+    margin-right: 1rem;
+  }
+}

@@ -47,6 +47,7 @@ const Location: React.FC = (props) => {
           height="300"
           style={{ border: 0, marginTop: "2rem", marginBottom: "2rem" }}
           loading="lazy"
+          title="Monalisa Kitchen"
         ></iframe>
       </div>
     </div>
