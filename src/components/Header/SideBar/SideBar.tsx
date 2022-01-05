@@ -6,9 +6,10 @@ import styles from "./SideBar.module.scss";
 type Props = {
   showMenu: boolean;
   marginTop: number;
+  onMenuClick(): void;
 };
 
-const SideBar: React.FC<Props> = ({ showMenu, marginTop }) => {
+const SideBar: React.FC<Props> = ({ showMenu, marginTop, onMenuClick }) => {
   const [isInitialLoad, setInitialLoad] = useState(false);
 
   useEffect(() => {
@@ -31,22 +32,26 @@ const SideBar: React.FC<Props> = ({ showMenu, marginTop }) => {
       className={`${styles["nav-link"]} 
       ${showMenu ? styles["visible"] : styles["hidden"]}`}
     >
-      <Link to="/story" className={`${styles["link"]}`}>
+      <Link to="/story" className={`${styles["link"]}`} onClick={onMenuClick}>
         <span>Our Story</span>
       </Link>
-      <Link to="/location" className={`${styles["link"]}`}>
-        <span>Location</span>
+      <Link to="/wedding" className={`${styles["link"]}`} onClick={onMenuClick}>
+        <span>{`Ceremony & Reception`}</span>
       </Link>
-      <Link to="/rsvp" className={`${styles["link"]}`}>
+      <Link to="/rsvp" className={`${styles["link"]}`} onClick={onMenuClick}>
         <span>Confirmation</span>
       </Link>
-      <Link to="/attire" className={`${styles["link"]}`}>
+      <Link to="/attire" className={`${styles["link"]}`} onClick={onMenuClick}>
         <span>Attire</span>
       </Link>
-      <Link to="/faq" className={`${styles["link"]}`}>
+      <Link to="/faq" className={`${styles["link"]}`} onClick={onMenuClick}>
         <span>FAQs</span>
       </Link>
-      <Link to="/contact" className={`${styles["link"]}`}>
+      <Link
+        to="/contact-us"
+        className={`${styles["link"]}`}
+        onClick={onMenuClick}
+      >
         <span>Contact Us</span>
       </Link>
     </div>

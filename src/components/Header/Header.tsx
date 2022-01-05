@@ -1,4 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
+import useDetectOutsideClick from "../../hooks/useDetectOutsideClick";
 
 import styles from "./Header.module.scss";
 
@@ -9,6 +10,8 @@ const Header: React.FC = () => {
   const [showMenu, setShowMenu] = useState(false);
   const [marginTop, setMarginTop] = useState(0);
   const headerRef = useRef(null);
+  const wrapperRef = useRef(null);
+  const isClickedOutside = useDetectOutsideClick(wrapperRef);
 
   const onMenuClick = () => {
     setShowMenu(!showMenu);
@@ -21,10 +24,20 @@ const Header: React.FC = () => {
     }
   }, [showMenu]);
 
+  useEffect(() => {
+    if (isClickedOutside) {
+      setShowMenu(false);
+    }
+  }, [isClickedOutside]);
+
   return (
-    <div className={`${styles["header-container"]}`}>
+    <div ref={wrapperRef} className={`${styles["header-container"]}`}>
       <Nav onClick={onMenuClick} showMenu={showMenu} headerRef={headerRef} />
-      <SideBar showMenu={showMenu} marginTop={marginTop} />
+      <SideBar
+        showMenu={showMenu}
+        marginTop={marginTop}
+        onMenuClick={onMenuClick}
+      />
     </div>
   );
 };

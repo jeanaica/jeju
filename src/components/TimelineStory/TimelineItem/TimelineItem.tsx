@@ -21,8 +21,6 @@ type Props = {
 const TimelineItem: React.FC<Props> = ({ data }) => {
   const time = data.time ? (data.time / 2) * 3 : 0;
 
-  console.log(time, "time");
-
   return (
     <div
       className={`${styles["timeline-item"]}`}

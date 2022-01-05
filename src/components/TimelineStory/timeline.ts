@@ -1,5 +1,3 @@
-// import { MpRounded } from "@mui/icons-material";
-
 export const timeline = [
   {
     text: "Junar happened",
