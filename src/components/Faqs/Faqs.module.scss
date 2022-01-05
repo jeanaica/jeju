@@ -1,0 +1,51 @@
+@import "styles/variables/colors";
+
+.container {
+  display: flex;
+}
+
+.title {
+  font-size: 2rem;
+  font-weight: 400;
+  margin-bottom: 1rem;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  padding: 2rem 3rem;
+}
+
+.section-container {
+  margin: 1rem 0;
+}
+
+.section-header {
+  color: #444;
+  font-weight: lighter;
+  margin: 1rem 0;
+  font-size: 1.5rem;
+}
+
+.faq-container {
+  display: flex;
+  flex-direction: column;
+  padding: 1rem 0;
+}
+
+.faq-question {
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+.faq-answer {
+  margin-top: 1rem;
+  height: auto;
+  transition: height 300ms;
+
+  &.is-hidden {
+    height: 0;
+    overflow: hidden;
+  }
+}

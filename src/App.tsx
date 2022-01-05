@@ -1,5 +1,5 @@
-import React from "react";
-import { Routes, Route, Link, Outlet } from "react-router-dom";
+import Faqs from "components/Faqs";
+import { Routes, Route } from "react-router-dom";
 
 import "./App.scss";
 
@@ -16,6 +16,7 @@ function App() {
       <Route element={<Layout />}>
         <Route path="/story" element={<Story />} />
         <Route path="/location" element={<Location />} />
+        <Route path="/faq" element={<Faqs />} />
       </Route>
     </Routes>
   );
