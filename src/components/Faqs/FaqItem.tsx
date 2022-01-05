@@ -9,12 +9,13 @@ type Props = {
 const FaqItem: FC<Props> = ({ item }) => {
   const [isExpanded, setIsExpanded] = useState(true);
 
+  const handleClick = () => {
+    setIsExpanded(!isExpanded);
+  };
+
   return (
     <div className={`${styles["faq-container"]}`}>
-      <div
-        onClick={() => setIsExpanded(!isExpanded)}
-        className={`${styles["faq-question"]}`}
-      >
+      <div onClick={handleClick} className={`${styles["faq-question"]}`}>
         {item.question}
       </div>
       <div

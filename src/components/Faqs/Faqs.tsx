@@ -3,7 +3,7 @@ import { faq, FaqType } from "./faq";
 import FaqItem from "./FaqSection";
 import styles from "./Faqs.module.scss";
 
-const TimelineStory: React.FC = () => {
+const Faqs: React.FC = () => {
   const items: FaqType = faq;
 
   return (
@@ -17,4 +17,4 @@ const TimelineStory: React.FC = () => {
   );
 };
 
-export default TimelineStory;
+export default Faqs;
