@@ -1,16 +1,21 @@
-import React from "react";
+import { FC, MouseEventHandler, ReactNode } from "react";
 
 import styles from "./Button.module.scss";
 
 type Props = {
-  onClick(): void;
-  children: React.ReactNode;
+  onClick?: MouseEventHandler;
+  children: ReactNode;
   className?: string;
+  type?: "button" | "submit" | "reset" | undefined;
 };
 
-const Button: React.FC<Props> = ({ onClick, children, className }) => {
+const Button: FC<Props> = ({ onClick, children, className, type }) => {
   return (
-    <button onClick={onClick} className={`${styles["button"]} ${className}`}>
+    <button
+      onClick={onClick}
+      type={type || "button"}
+      className={`${styles["button"]} ${className}`}
+    >
       {children}
     </button>
   );

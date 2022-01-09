@@ -1,0 +1,31 @@
+@import "styles/variables/colors";
+
+.confirmation {
+  max-width: 600px;
+  margin: 3rem;
+}
+
+.confirmation-section {
+  padding: 1rem 0;
+}
+
+.confirmation-box {
+  padding: 2rem 0 1rem 2rem;
+  margin: 1rem 0;
+  background-color: var(--color-primary-light);
+}
+
+.confirmation-button {
+  width: 100%;
+  text-transform: capitalize;
+}
+
+.information {
+  letter-spacing: 2px;
+}
+
+.instructions {
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  letter-spacing: 0.5px;
+}

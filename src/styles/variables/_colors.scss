@@ -1,7 +1,8 @@
 :root {
   /* main colors */
   --color-primary: #052441;
-  --color-primary-light: color-mod(var(--color-primary) tint(15%));
+  --color-primary-light: #052441dd;
+  // --color-primary-light: color-mod(var(--color-primary) tint(15%));
   --color-primary-dark: color-mod(var(--color-primary) shade(15%));
   --color-primary-bg: color-mod(var(--color-primary) alpha(20%));
 
@@ -26,8 +27,8 @@
   --white: white;
 
   /* feedback */
-  --color-success: #88c459;
-  --color-error: #f5414f;
+  --color-success: #00e9a3;
+  --color-error: #ff6976;
   --color-warning: #ffd137;
 
   /* typography */

@@ -9,7 +9,6 @@ type Props = {
 };
 
 const FaqSection: FC<Props> = ({ data, section }) => {
-  console.log(section);
   return (
     <div className={`${styles["section-container"]}`}>
       <div className={`${styles["section-header"]}`}>{section}</div>
