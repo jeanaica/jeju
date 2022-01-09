@@ -26,7 +26,7 @@ const Landing: React.FC = () => {
           <h1 className={`${styles["nav-header"]} text--xxxl`}>Je | Ju</h1>
           <span>April 1, 2022</span>
         </div>
-        <div className={`${styles["buttons"]} col-7 col-s-9`}>
+        <div className={`${styles["buttons"]}`}>
           <Button onClick={() => handleAttend("YES")}>We'll be there!</Button>
           <Button onClick={() => handleAttend("MAYBE")}>Not sure.</Button>
           <Button onClick={() => handleAttend("NO")}>We can't come</Button>

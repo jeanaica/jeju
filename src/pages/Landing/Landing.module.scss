@@ -36,9 +36,25 @@
   display: flex;
   flex-direction: column;
   align-content: space-between;
+  width: 100%;
 
   :not(:last-child) {
     margin-bottom: 1rem;
+  }
+
+  @media only screen and (min-width: 768px) {
+    border: none;
+    flex-direction: row;
+    justify-content: center;
+    flex: unset;
+    margin-bottom: 5rem;
+
+    button {
+      margin-bottom: 1rem;
+      margin-left: 1rem;
+      margin-right: 1rem;
+      min-width: 200px;
+    }
   }
 
   button {
