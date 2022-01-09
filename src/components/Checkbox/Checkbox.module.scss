@@ -40,7 +40,7 @@
 
 /* When the checkbox is checked, add a blue background */
 .container input:checked ~ .checkmark {
-  background-color: var(--color-secondary-dark);
+  background-color: var(--color-secondary-light);
 }
 
 /* Create the checkmark/indicator (hidden when not checked) */
@@ -68,7 +68,7 @@
 }
 
 .label {
-  color: var(--color-secondary-dark);
+  color: var(--color-secondary);
   margin-left: 3rem;
   vertical-align: super;
 }

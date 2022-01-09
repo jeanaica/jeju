@@ -12,12 +12,10 @@ const Landing: React.FC = () => {
 
   const { login } = useAuth();
 
-  const handleAttend = () => {
+  const handleAttend = (attend: "YES" | "MAYBE" | "NO") => {
     if (id) {
       login(id);
-      navigate("/story");
-    } else {
-      navigate("/");
+      navigate("/rsvp", { state: { attend } });
     }
   };
 
@@ -29,9 +27,9 @@ const Landing: React.FC = () => {
           <span>April 1, 2022</span>
         </div>
         <div className={`${styles["buttons"]} col-7 col-s-9`}>
-          <Button onClick={handleAttend}>We'll be there!</Button>
-          <Button onClick={() => console.log("Hmmm")}>Not sure.</Button>
-          <Button onClick={() => console.log("Noooo")}>We can't come</Button>
+          <Button onClick={() => handleAttend("YES")}>We'll be there!</Button>
+          <Button onClick={() => handleAttend("MAYBE")}>Not sure.</Button>
+          <Button onClick={() => handleAttend("NO")}>We can't come</Button>
         </div>
       </div>
     </div>

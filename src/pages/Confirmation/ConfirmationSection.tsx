@@ -1,28 +1,73 @@
+import { FC, useCallback, useEffect, useState } from "react";
+
 import Alert from "components/Alert";
 import Button from "components/Button";
 import Title from "components/Title";
-import { FC, useCallback, useEffect, useState } from "react";
+import getGuest, { updateGuestAttendance } from "firebase/getGuest";
+import useAuth from "hooks/useAuth";
 
 import styles from "./Confirmation.module.scss";
 import ConfirmationBox from "./ConfirmationBox";
+import { useLocation } from "react-router-dom";
 
 const ConfirmationSection: FC = () => {
   const [guestList, setGuestList] = useState<
-    Record<string, Record<string, boolean>>
+    Record<string, Record<string, string | boolean | number>>
   >({});
+  const { token } = useAuth();
+  // const [tableNumber, setTableNumber] = useState(0);
+  const location = useLocation();
 
   const [isSent, setIsSent] = useState(false);
   const [hasErrors, setHasErrors] = useState(false);
 
   useEffect(() => {
-    // TODO: Put get API call here
-    setGuestList({
-      "Joel Silang": { isGoing: false },
-      "Aira Aron-Silang": { isGoing: false },
-      "Asher Sky Silang": { isGoing: false },
-      "Gideon Samuel Silang": { isGoing: false },
-    });
-  }, []);
+    if (token) {
+      getGuest(token)
+        .then((guest) => {
+          guest?.group.forEach(
+            (item: {
+              first_name: string;
+              last_name: string;
+              isAttending: boolean;
+              number_of_additional_guests?: number;
+            }) => {
+              let defaultAnswer = !!item.isAttending;
+              if (location?.state?.attend) {
+                defaultAnswer = location.state.attend === "NO" ? false : true;
+              }
+
+              setGuestList(
+                (
+                  prevState: Record<
+                    string,
+                    Record<string, string | boolean | number>
+                  >
+                ) => ({
+                  ...prevState,
+                  [`${item.first_name} ${item.last_name}`]: {
+                    first_name: item.first_name,
+                    last_name: item.last_name,
+                    isAttending: defaultAnswer,
+                    number_of_additional_guests:
+                      item.number_of_additional_guests
+                        ? item.number_of_additional_guests
+                        : 0,
+                  },
+                })
+              );
+            }
+          );
+
+          // setTableNumber(guest?.table_number);
+        })
+        .catch((err) => console.log(err));
+    }
+
+    return () => {
+      setGuestList({});
+    };
+  }, [location.pathname, location?.state?.attend, token]);
 
   const handleBoxClick = useCallback(
     (e) => {
@@ -36,34 +81,43 @@ const ConfirmationSection: FC = () => {
 
       setGuestList({
         ...guestList,
-        [e.target.name]: { isGoing: e.target.checked },
+        [e.target.name]: {
+          ...guestList[e.target.name],
+          isAttending: e.target.checked,
+        },
       });
     },
-    [guestList, hasErrors, isSent, setGuestList]
+    [guestList, hasErrors, isSent]
   );
 
-  const handleSubmit = useCallback((e) => {
-    e.preventDefault();
+  const handleSubmit = useCallback(
+    (e) => {
+      e.preventDefault();
 
-    const formData = new FormData(e.target);
-    const formProps = Object.fromEntries(formData);
+      const submitGuest: Record<string, string | number | boolean>[] =
+        Object.values(guestList).map((value) => value);
 
-    const goingGuestArray = Object.keys(formProps);
-
-    console.log(goingGuestArray);
-    setIsSent(true);
-    // setHasErrors(true);
-    // TODO: send to db
-  }, []);
+      if (token) {
+        updateGuestAttendance(token, submitGuest)
+          .then(() => {
+            setIsSent(true);
+          })
+          .catch(() => {
+            setHasErrors(true);
+          });
+      }
+    },
+    [guestList, token]
+  );
 
   return (
     <div className={`${styles["confirmation"]}`}>
-      <Title header={`Confirmation`} />
+      <Title header={`R.S.V.P.`} />
 
       <Alert className={`${styles["instructions"]}`}>
         <p>
           * We would like to see you there on our special day. Please check the
-          names of the guests who would be joining us and click on SUBMIT
+          names of the guests who would be joining us and click on SUBMIT.
         </p>
       </Alert>
 
@@ -78,23 +132,34 @@ const ConfirmationSection: FC = () => {
       )}
 
       <div className={`${styles["confirmation-section"]}`}>
-        <h6 className={`${styles["information"]}`}>*Yes, we'll be there</h6>
-        <form name="confirmationForm" onSubmit={handleSubmit}>
-          {Object.keys(guestList).length > 0 ? (
-            Object.keys(guestList).map((name) => (
-              <ConfirmationBox
-                key={name}
-                onClick={handleBoxClick}
-                name={name}
-                isGoing={guestList[name].isGoing}
-              />
-            ))
-          ) : (
-            <div></div>
-          )}
-
-          <Button type="submit" className={`${styles["confirmation-button"]}`}>
-            Submit
+        <h6 className={`${styles["information"]}`}>Yes, we'll be there</h6>
+        <form
+          name="confirmationForm"
+          onSubmit={handleSubmit}
+          className={`${styles["form-container"]}`}
+        >
+          <div className={`${styles["confirmation-box-group"]}`}>
+            {Object.keys(guestList).length > 0 ? (
+              Object.keys(guestList).map((name) => (
+                <ConfirmationBox
+                  key={name}
+                  onClick={handleBoxClick}
+                  name={name}
+                  isGoing={!!guestList[name].isAttending}
+                  hasAdditionalGuest={
+                    guestList[name].number_of_additional_guests
+                  }
+                />
+              ))
+            ) : (
+              <div></div>
+            )}
+          </div>
+          <Button
+            type="submit"
+            className={`${styles["confirmation-button"]} text--lg`}
+          >
+            SUBMIT
           </Button>
         </form>
       </div>

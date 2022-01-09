@@ -8,7 +8,7 @@ import firebaseConfig from "../../config/Firebase";
 const firebase = initializeApp(firebaseConfig);
 
 initializeAppCheck(firebase, {
-  provider: new ReCaptchaV3Provider("5959571B-CF8F-4F23-BC73-01EB06A311B5"),
+  provider: new ReCaptchaV3Provider(`${process.env.REACT_APP_SITE_KEY}`),
 
   // Optional argument. If true, the SDK automatically refreshes App Check
   // tokens as needed.

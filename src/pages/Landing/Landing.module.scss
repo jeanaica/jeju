@@ -13,6 +13,10 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+
+  @media only screen and (min-width: 768px) {
+    border: none;
+  }
 }
 
 .header {
@@ -35,5 +39,9 @@
 
   :not(:last-child) {
     margin-bottom: 1rem;
+  }
+
+  button {
+    font-size: 1rem;
   }
 }

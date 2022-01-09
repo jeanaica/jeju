@@ -1,7 +1,6 @@
-import React, { RefObject, useEffect, useState } from "react";
+import React, { RefObject } from "react";
 import Menu from "@mui/icons-material/Menu";
 import Close from "@mui/icons-material/Close";
-import { Link } from "react-router-dom";
 
 import styles from "./Nav.module.scss";
 import NavLinks from "../NavLinks";

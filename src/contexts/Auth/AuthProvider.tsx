@@ -2,7 +2,8 @@ import { ReactNode, useEffect, useMemo, useState } from "react";
 
 import useLocalStorage from "hooks/useLocalStorage";
 import useReadLocalStorage from "hooks/useReadLocalStorage";
-import validateToken from "firebase/guests/fetch";
+import validateToken from "firebase/fetch";
+import { logoutFirebase } from "firebase/authFirebase";
 
 import AuthContext from "./context";
 
@@ -27,9 +28,10 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
     }
   };
 
-  const logout = () => {
+  const logout = async () => {
     setLoading(true);
 
+    logoutFirebase();
     setTimeout(() => {
       setToken(null);
       setLoading(false);

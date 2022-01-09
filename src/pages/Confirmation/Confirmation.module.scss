@@ -2,7 +2,19 @@
 
 .confirmation {
   max-width: 600px;
-  margin: 3rem;
+  margin: 3rem 3rem 3rem 3rem;
+
+  @media only screen and (min-width: 768px) {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    max-width: 100%;
+  }
+}
+
+.add-guest {
+  font-size: 0.8rem;
+  color: var(--color-secondary);
 }
 
 .confirmation-section {
@@ -13,19 +25,54 @@
   padding: 2rem 0 1rem 2rem;
   margin: 1rem 0;
   background-color: var(--color-primary-light);
+  border-radius: 3px;
+}
+
+.confirmation-box-group {
+  display: flex;
+  flex-wrap: wrap;
+  flex: 1;
+  flex-direction: column;
+
+  @media only screen and (min-width: 768px) {
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+
+    > div {
+      flex: 0 48%;
+      margin-bottom: 0.5rem;
+    }
+  }
 }
 
 .confirmation-button {
   width: 100%;
+  margin-top: 3rem;
   text-transform: capitalize;
+
+  @media only screen and (min-width: 768px) {
+    width: 50%;
+    margin-top: 5rem;
+  }
 }
 
 .information {
   letter-spacing: 2px;
+  margin-top: 3rem;
 }
 
 .instructions {
   margin-top: 2rem;
   margin-bottom: 1rem;
   letter-spacing: 0.5px;
+  border-radius: 3px;
+}
+
+.form-container {
+  @media only screen and (min-width: 768px) {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
 }

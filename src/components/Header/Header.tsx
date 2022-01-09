@@ -21,6 +21,14 @@ const Header: React.FC = () => {
   };
 
   useEffect(() => {
+    if (showMenu && showSideBar) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "unset";
+    }
+  }, [showMenu, showSideBar]);
+
+  useEffect(() => {
     if (width <= 768) {
       setShowSideBar(true);
     } else {

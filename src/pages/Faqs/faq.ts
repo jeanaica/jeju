@@ -18,26 +18,26 @@ export const faq = {
     {
       question: "When should I arrive?",
       answer:
-        "The wedding ceremony starts at 6:00 PM. You can arrive at least 15 minutes before the event.",
+        "The wedding ceremony starts at 6:00 PM. You can arrive at least 30 minutes before the event.",
     },
     {
       question:
         "Something came up, I don't think I can make it to the wedding, What should I do?",
       answer:
-        "Just message us using the links in the contact us page. We love you still.",
+        "Update your RSVP in this site or just message us using the links in the contact us page. We love you still.",
     },
     {
       question:
         "I changed my mind and I have decided that I want to go, What should I do?",
       answer:
-        "Just message us using the links in the contact us page. We love you even though you are fickle minded.",
+        "Update your RSVP in this site or just message us using the links in the contact us page. We love you even though you are fickle minded.",
     },
   ],
   Attire: [
     {
       question: "What should I wear? shoes, dress, etc.",
       answer:
-        "Wear your best smile, you are not required to wear a dress or suit. It is a very casual wedding. You know us. Come as you are. And yes. you can wear simple denim pants.",
+        "Wear your best smile, you are not required to wear a dress or a suit. It is a very casual wedding. You know us. Come as you are. And yes. you can wear simple denim pants.",
     },
     {
       question: "What is you color theme?",
@@ -86,7 +86,7 @@ export const faq = {
   Others: [
     {
       question: "What if I want to bring someone to the event?",
-      answer: `Please check your invite in the attendance page if you have additional guests that you can bring and how many. If your invite says you can have an additional guest, then the answer is yes. If not, please do not. We are bound by the IATF guidelines and there is a max capacity at the venue.`,
+      answer: `Please check your invite in the RSVP page if you have additional guests that you can bring and how many. If your invite says you can have an additional guest, then the answer is yes. If not, please do not. We are bound by the IATF guidelines and there is a max capacity at the venue.`,
     },
   ],
 };

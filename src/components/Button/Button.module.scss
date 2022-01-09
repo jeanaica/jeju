@@ -2,13 +2,15 @@
 
 .button {
   padding: 1rem;
-  border: 1px solid var(--color-border);
-  border-radius: 2px;
+  border: 2px solid var(--color-border);
+  border-radius: 3px;
   background-color: var(--btn-primary-bg);
-  color: var(--btn-primary-label);
+  color: var(--btn-primary);
   font-family: var(--font-secondary);
+  letter-spacing: 2px;
 
   &:hover {
+    border-color: var(--btn-primary-hover);
     background-color: var(--btn-primary-hover);
   }
 

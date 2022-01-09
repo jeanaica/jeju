@@ -30,7 +30,7 @@ const NavLinks: React.FC = () => {
         to="/rsvp"
         className={`${activePath === "rsvp" ? styles["active"] : ""}`}
       >
-        Confirmation
+        RSVP
       </Link>
       <Link
         to="/faq"

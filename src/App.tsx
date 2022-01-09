@@ -4,6 +4,7 @@ import { Routes, Route, Navigate, useLocation } from "react-router-dom";
 
 import "./App.scss";
 
+import Loading from "components/Loading";
 import Layout from "./components/Layout";
 import Contact from "./pages/Contact";
 import Landing from "./pages/Landing";
@@ -18,7 +19,7 @@ const ProtectedRoute = ({ children }: { children: JSX.Element }) => {
   const { authenticated, loading } = useAuth();
 
   if (loading) {
-    return <p>Checking authenticaton..</p>;
+    return <Loading />;
   }
 
   if (!authenticated) {

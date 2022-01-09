@@ -64,7 +64,7 @@ const SideBar: React.FC<Props> = ({ showMenu, marginTop, onMenuClick }) => {
         }`}
         onClick={onMenuClick}
       >
-        <span>Confirmation</span>
+        <span>RSVP</span>
       </Link>
       <Link
         to="/faq"
