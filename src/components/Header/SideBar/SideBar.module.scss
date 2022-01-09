@@ -18,7 +18,7 @@
       color: var(--color-nav-link-hover);
     }
 
-    &:active {
+    &.active {
       color: var(--color-nav-link-active);
       text-decoration: underline;
     }
@@ -31,7 +31,7 @@
   align-items: center;
   text-transform: uppercase;
 
-  &:hover:not(:active) {
+  &:hover:not(.active) {
     background-color: var(--color-secondary-dark);
   }
 

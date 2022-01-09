@@ -1,10 +1,15 @@
 import React from "react";
 import ReactDOM from "react-dom";
+import { BrowserRouter } from "react-router-dom";
+import { initializeApp } from "firebase/app";
+
 import "./styles/styles.scss";
+
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
+import firebaseConfig from "config/Firebase";
 
-import { BrowserRouter } from "react-router-dom";
+initializeApp(firebaseConfig);
 
 ReactDOM.render(
   <React.StrictMode>
