@@ -1,5 +1,6 @@
 import Alert from "components/Alert";
 import Button from "components/Button";
+import Title from "components/Title";
 import { FC, useCallback, useEffect, useState } from "react";
 
 import styles from "./Confirmation.module.scss";
@@ -50,14 +51,21 @@ const ConfirmationSection: FC = () => {
     const goingGuestArray = Object.keys(formProps);
 
     console.log(goingGuestArray);
-    // setIsSent(true);
-    setHasErrors(true);
+    setIsSent(true);
+    // setHasErrors(true);
     // TODO: send to db
   }, []);
 
   return (
     <div className={`${styles["confirmation"]}`}>
-      <h3>Confirmation</h3>
+      <Title header={`Confirmation`} />
+
+      <Alert className={`${styles["instructions"]}`}>
+        <p>
+          * We would like to see you there on our special day. Please check the
+          names of the guests who would be joining us and click on SUBMIT
+        </p>
+      </Alert>
 
       {(isSent || hasErrors) && (
         <Alert type={hasErrors ? "error" : "success"}>
@@ -70,7 +78,7 @@ const ConfirmationSection: FC = () => {
       )}
 
       <div className={`${styles["confirmation-section"]}`}>
-        <h6>*Yes, we'll be there</h6>
+        <h6 className={`${styles["information"]}`}>*Yes, we'll be there</h6>
         <form name="confirmationForm" onSubmit={handleSubmit}>
           {Object.keys(guestList).length > 0 ? (
             Object.keys(guestList).map((name) => (

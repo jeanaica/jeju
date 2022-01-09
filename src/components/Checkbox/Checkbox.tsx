@@ -12,7 +12,7 @@ const Checkbox: FC<Props> = ({ name, checked, onClick }) => {
         <input
           name={name}
           type="checkbox"
-          checked={checked}
+          defaultChecked={checked}
           onClick={onClick}
         />
         <span className={`${styles["checkmark"]}`}></span>
