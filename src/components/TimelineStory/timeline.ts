@@ -46,6 +46,5 @@ export const timeline = [
   {
     text: "Wedding",
     time: 1,
-    date: "April 1, 2022",
   },
 ];

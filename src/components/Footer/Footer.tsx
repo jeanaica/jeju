@@ -1,21 +1,24 @@
 import React from "react";
 import { HashLink } from "react-router-hash-link";
+import { useLocation } from "react-router-dom";
 
 import KeyboardArrowUpIcon from "@mui/icons-material/KeyboardArrowUp";
 
 import styles from "./Footer.module.scss";
 
 type Props = {
-  backToTop?: boolean;
+  backToTop: boolean;
 };
 
 const Footer: React.FC<Props> = ({ backToTop }) => {
+  const location = useLocation();
+
   return (
     <div className={`${styles["footer"]}`}>
-      {backToTop || true ? (
+      {backToTop ? (
         <HashLink
           smooth
-          to={"/story#top"}
+          to={`${location.pathname}#top`}
           className={`${styles["back-to-top"]}`}
         >
           <KeyboardArrowUpIcon className={`${styles["icon"]}`} />

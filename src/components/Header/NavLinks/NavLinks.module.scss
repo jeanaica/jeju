@@ -1,0 +1,38 @@
+@import "styles/base/typography";
+@import "styles/variables/breakpoints";
+
+.desktop-menu {
+  letter-spacing: 2px;
+  font-weight: 300;
+  align-items: flex-end;
+  display: flex;
+
+  a {
+    color: var(--color-nav-link);
+    text-decoration: none;
+    margin-right: 1.5rem;
+
+    &:hover {
+      color: var(--color-nav-link);
+      text-decoration: underline;
+    }
+
+    &:last-child {
+      margin-right: 0;
+    }
+
+    &.active {
+      color: var(--color-nav-link-active);
+      text-decoration: underline;
+    }
+  }
+
+  @media screen and (max-width: "900px") {
+    a {
+      margin-right: 0.5rem;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+  }
+}
