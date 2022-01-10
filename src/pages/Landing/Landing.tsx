@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 
 import Button from "components/Button";
@@ -11,6 +11,12 @@ const Landing: React.FC = () => {
   let navigate = useNavigate();
 
   const { login } = useAuth();
+
+  useEffect(() => {
+    if (!id) {
+      navigate("/story");
+    }
+  }, [id]);
 
   const handleAttend = (attend: "YES" | "MAYBE" | "NO") => {
     if (id) {
