@@ -1,11 +1,15 @@
+import useAuth from "hooks/useAuth";
 import React from "react";
 import { timeline } from "./timeline";
+import { timelinePublic } from "./timelinePublic";
+
 import TimelineItem from "./TimelineItem";
 
 import styles from "./TimelineStory.module.scss";
 
 const TimelineStory: React.FC = () => {
-  const items = timeline;
+  const { authenticated } = useAuth();
+  const items = authenticated ? timeline : timelinePublic;
 
   return (
     <div className={`${styles["timeline-container"]}`}>

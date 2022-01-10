@@ -5,8 +5,11 @@ import TimelineStory from "../../components/TimelineStory";
 
 import styles from "./Story.module.scss";
 import Title from "../../components/Title";
+import useAuth from "hooks/useAuth";
 
 const Story: React.FC = () => {
+  const { authenticated } = useAuth();
+
   return (
     <div className={`${styles["story"]}`}>
       <Title
@@ -19,7 +22,9 @@ const Story: React.FC = () => {
         <span className={`text--md`}>
           <i>Lifetime as</i>
         </span>
-        <h2 className={`${styles["name"]}`}>{`Mr. & Mrs. Alinsub`}</h2>
+        <h2 className={`${styles["name"]}`}>{`Mr. & Mrs. ${
+          authenticated ? "Alinsub" : ""
+        }`}</h2>
       </div>
     </div>
   );

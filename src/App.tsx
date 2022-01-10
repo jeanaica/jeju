@@ -42,18 +42,33 @@ function App() {
         <Routes>
           <Route path="/" element={<Landing />} />
           <Route path="/:id" element={<Landing />} />
-          <Route
-            element={
-              <ProtectedRoute>
-                <Layout />
-              </ProtectedRoute>
-            }
-          >
+          <Route element={<Layout />}>
             <Route path="/story" element={<Story />} />
             <Route path="/faq" element={<Faqs />} />
-            <Route path="/wedding" element={<Location />} />
-            <Route path="/contact-us" element={<Contact />} />
-            <Route path="/rsvp" element={<Confirmation />} />
+            <Route
+              path="/wedding"
+              element={
+                <ProtectedRoute>
+                  <Location />
+                </ProtectedRoute>
+              }
+            />
+            <Route
+              path="/contact-us"
+              element={
+                <ProtectedRoute>
+                  <Contact />
+                </ProtectedRoute>
+              }
+            />
+            <Route
+              path="/rsvp"
+              element={
+                <ProtectedRoute>
+                  <Confirmation />
+                </ProtectedRoute>
+              }
+            />
           </Route>
         </Routes>
       </AuthProvider>

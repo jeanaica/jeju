@@ -1,3 +1,4 @@
+import useAuth from "hooks/useAuth";
 import React, { useEffect, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 
@@ -6,6 +7,7 @@ import styles from "./NavLinks.module.scss";
 const NavLinks: React.FC = () => {
   const [activePath, setActivePath] = useState("story");
   const location = useLocation();
+  const { authenticated } = useAuth();
 
   useEffect(() => {
     const activePath = location.pathname.replace("/", "");
@@ -20,30 +22,36 @@ const NavLinks: React.FC = () => {
       >
         Our Story
       </Link>
-      <Link
-        to="/wedding"
-        className={`${activePath === "wedding" ? styles["active"] : ""}`}
-      >
-        {`Ceremony & Reception`}
-      </Link>
-      <Link
-        to="/rsvp"
-        className={`${activePath === "rsvp" ? styles["active"] : ""}`}
-      >
-        RSVP
-      </Link>
+      {authenticated && (
+        <Link
+          to="/wedding"
+          className={`${activePath === "wedding" ? styles["active"] : ""}`}
+        >
+          {`Ceremony & Reception`}
+        </Link>
+      )}
+      {authenticated && (
+        <Link
+          to="/rsvp"
+          className={`${activePath === "rsvp" ? styles["active"] : ""}`}
+        >
+          RSVP
+        </Link>
+      )}
       <Link
         to="/faq"
         className={`${activePath === "faq" ? styles["active"] : ""}`}
       >
         FAQs
       </Link>
-      <Link
-        to="/contact-us"
-        className={`${activePath === "contact-us" ? styles["active"] : ""}`}
-      >
-        Contact Us
-      </Link>
+      {authenticated && (
+        <Link
+          to="/contact-us"
+          className={`${activePath === "contact-us" ? styles["active"] : ""}`}
+        >
+          Contact Us
+        </Link>
+      )}
     </div>
   );
 };

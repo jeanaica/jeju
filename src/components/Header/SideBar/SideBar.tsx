@@ -1,3 +1,4 @@
+import useAuth from "hooks/useAuth";
 import React, { useEffect, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 
@@ -13,6 +14,7 @@ const SideBar: React.FC<Props> = ({ showMenu, marginTop, onMenuClick }) => {
   const [isInitialLoad, setInitialLoad] = useState(false);
   const [activePath, setActivePath] = useState("story");
   const location = useLocation();
+  const { authenticated } = useAuth();
 
   useEffect(() => {
     const activePath = location.pathname.replace("/", "");
@@ -48,24 +50,28 @@ const SideBar: React.FC<Props> = ({ showMenu, marginTop, onMenuClick }) => {
       >
         <span>Our Story</span>
       </Link>
-      <Link
-        to="/wedding"
-        className={`${styles["link"]} ${
-          activePath === "wedding" ? styles["active"] : ""
-        }`}
-        onClick={onMenuClick}
-      >
-        <span>{`Ceremony & Reception`}</span>
-      </Link>
-      <Link
-        to="/rsvp"
-        className={`${styles["link"]} ${
-          activePath === "rsvp" ? styles["active"] : ""
-        }`}
-        onClick={onMenuClick}
-      >
-        <span>RSVP</span>
-      </Link>
+      {authenticated && (
+        <Link
+          to="/wedding"
+          className={`${styles["link"]} ${
+            activePath === "wedding" ? styles["active"] : ""
+          }`}
+          onClick={onMenuClick}
+        >
+          <span>{`Ceremony & Reception`}</span>
+        </Link>
+      )}
+      {authenticated && (
+        <Link
+          to="/rsvp"
+          className={`${styles["link"]} ${
+            activePath === "rsvp" ? styles["active"] : ""
+          }`}
+          onClick={onMenuClick}
+        >
+          <span>RSVP</span>
+        </Link>
+      )}
       <Link
         to="/faq"
         className={`${styles["link"]} ${
@@ -75,15 +81,17 @@ const SideBar: React.FC<Props> = ({ showMenu, marginTop, onMenuClick }) => {
       >
         <span>FAQs</span>
       </Link>
-      <Link
-        to="/contact-us"
-        className={`${styles["link"]} ${
-          activePath === "contact-us" ? styles["active"] : ""
-        }`}
-        onClick={onMenuClick}
-      >
-        <span>Contact Us</span>
-      </Link>
+      {authenticated && (
+        <Link
+          to="/contact-us"
+          className={`${styles["link"]} ${
+            activePath === "contact-us" ? styles["active"] : ""
+          }`}
+          onClick={onMenuClick}
+        >
+          <span>Contact Us</span>
+        </Link>
+      )}
     </div>
   );
 };
