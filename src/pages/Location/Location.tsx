@@ -36,7 +36,10 @@ const Location: React.FC = (props) => {
 
         <div className={`${styles["info"]}`}>
           <LinkIcon />
-          <a href="https://www.facebook.com/monalisakitchen.ph">
+          <a
+            href="https://www.facebook.com/monalisakitchen.ph"
+            className={`truncate`}
+          >
             facebook.com/monalisakitchen.ph
           </a>
         </div>

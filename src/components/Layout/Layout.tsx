@@ -22,7 +22,7 @@ const Layout: React.FC = () => {
   return (
     <div className={`${styles["layout"]}`}>
       <Header />
-      <div ref={outletRef}>
+      <div ref={outletRef} className={`${styles["content"]}`}>
         <Outlet />
       </div>
       <Footer backToTop={showBackToTop} />

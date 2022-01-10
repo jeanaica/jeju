@@ -1,6 +1,12 @@
 import { AuthProvider } from "contexts/Auth/AuthProvider";
 import useAuth from "hooks/useAuth";
-import { Routes, Route, Navigate, useLocation } from "react-router-dom";
+import {
+  Routes,
+  Route,
+  Navigate,
+  useLocation,
+  BrowserRouter,
+} from "react-router-dom";
 
 import "./App.scss";
 
@@ -31,25 +37,27 @@ const ProtectedRoute = ({ children }: { children: JSX.Element }) => {
 
 function App() {
   return (
-    <AuthProvider>
-      <Routes>
-        <Route path="/" element={<Landing />} />
-        <Route path="/:id" element={<Landing />} />
-        <Route
-          element={
-            <ProtectedRoute>
-              <Layout />
-            </ProtectedRoute>
-          }
-        >
-          <Route path="/story" element={<Story />} />
-          <Route path="/faq" element={<Faqs />} />
-          <Route path="/wedding" element={<Location />} />
-          <Route path="/contact-us" element={<Contact />} />
-          <Route path="/rsvp" element={<Confirmation />} />
-        </Route>
-      </Routes>
-    </AuthProvider>
+    <BrowserRouter>
+      <AuthProvider>
+        <Routes>
+          <Route path="/" element={<Landing />} />
+          <Route path="/:id" element={<Landing />} />
+          <Route
+            element={
+              <ProtectedRoute>
+                <Layout />
+              </ProtectedRoute>
+            }
+          >
+            <Route path="/story" element={<Story />} />
+            <Route path="/faq" element={<Faqs />} />
+            <Route path="/wedding" element={<Location />} />
+            <Route path="/contact-us" element={<Contact />} />
+            <Route path="/rsvp" element={<Confirmation />} />
+          </Route>
+        </Routes>
+      </AuthProvider>
+    </BrowserRouter>
   );
 }
 

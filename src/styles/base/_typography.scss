@@ -120,6 +120,10 @@ a {
   color: var(--color-link);
   text-decoration: none;
 
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+
   &:hover {
     color: var(--color-link-hover);
     text-decoration: underline;
@@ -183,4 +187,5 @@ strong {
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
+  word-wrap: break-word;
 }
