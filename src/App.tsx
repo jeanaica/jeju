@@ -10,7 +10,6 @@ import {
 
 import "./App.scss";
 
-import Loading from "components/Loading";
 import Layout from "./components/Layout";
 import Contact from "./pages/Contact";
 import Landing from "./pages/Landing";
@@ -22,11 +21,7 @@ import Faqs from "./pages/Faqs";
 const ProtectedRoute = ({ children }: { children: JSX.Element }) => {
   let location = useLocation();
 
-  const { authenticated, loading } = useAuth();
-
-  if (loading) {
-    return <Loading />;
-  }
+  const { authenticated } = useAuth();
 
   if (!authenticated) {
     return <Navigate to="/" state={{ from: location }} />;

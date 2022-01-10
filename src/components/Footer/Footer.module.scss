@@ -4,8 +4,11 @@
   grid-area: footer;
   background-color: var(--color-primary);
   color: var(--color-secondary);
-  padding: 2rem;
   text-align: center;
+  margin-top: auto;
+  padding: 4rem;
+  position: absolute;
+  width: 100%;
 
   a:hover {
     color: var(--color-accent-light);

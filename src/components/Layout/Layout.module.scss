@@ -6,11 +6,11 @@
 .content {
   padding: 0;
 
-  @media (min-width: "769px") {
+  @media screen and (min-width: "769px") {
     padding: 2rem 5rem;
   }
 
-  @media (min-width: "850px") {
+  @media screen and (min-width: "850px") {
     padding: 2rem 10rem;
   }
 }

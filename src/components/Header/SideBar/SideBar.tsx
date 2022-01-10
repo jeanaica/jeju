@@ -35,8 +35,8 @@ const SideBar: React.FC<Props> = ({ showMenu, marginTop, onMenuClick }) => {
     <div
       style={
         !isInitialLoad
-          ? { display: "none" }
-          : { display: "flex", height: `calc(100% - ${marginTop}px)` }
+          ? { opacity: 0 }
+          : { opacity: 1, height: `calc(100% - ${marginTop}px)` }
       }
       className={`${styles["nav-link"]} 
       ${showMenu ? styles["visible"] : styles["hidden"]}`}

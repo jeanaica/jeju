@@ -3,8 +3,6 @@
   flex-grow: 1;
   flex-direction: column;
   min-width: 300px;
-  transform: translateX(-100%);
-  -webkit-transform: translateX(-100%);
   z-index: 2;
   width: 63%;
   position: absolute;
@@ -42,7 +40,6 @@
 }
 
 .visible {
-  display: flex !important;
   animation: slide-in 0.5s forwards;
   -webkit-animation: slide-in 0.5s forwards;
 }
