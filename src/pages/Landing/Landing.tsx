@@ -24,7 +24,11 @@ const Landing: React.FC = () => {
       <div className={`${styles["container"]}`}>
         <div className={`${styles["header"]}`}>
           <h1 className={`${styles["nav-header"]} text--xxxl`}>Je | Ju</h1>
-          <span>April 1, 2022</span>
+          <span>April 1, 2022 5:30PM (UTC +8)</span>
+          <br />
+          <span className={`text--xs`}>
+            We are getting married and you are invited!
+          </span>
         </div>
         <div className={`${styles["buttons"]}`}>
           <Button onClick={() => handleAttend("YES")} disabled={!id}>
