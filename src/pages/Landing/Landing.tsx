@@ -27,9 +27,15 @@ const Landing: React.FC = () => {
           <span>April 1, 2022</span>
         </div>
         <div className={`${styles["buttons"]}`}>
-          <Button onClick={() => handleAttend("YES")}>We'll be there!</Button>
-          <Button onClick={() => handleAttend("MAYBE")}>Not sure.</Button>
-          <Button onClick={() => handleAttend("NO")}>We can't come</Button>
+          <Button onClick={() => handleAttend("YES")} disabled={!id}>
+            We'll be there!
+          </Button>
+          <Button onClick={() => handleAttend("MAYBE")} disabled={!id}>
+            Not sure.
+          </Button>
+          <Button onClick={() => handleAttend("NO")} disabled={!id}>
+            We can't come
+          </Button>
         </div>
       </div>
     </div>

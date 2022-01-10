@@ -14,7 +14,7 @@
   justify-content: center;
   align-items: center;
 
-  @media only screen and (min-width: 768px) {
+  @media (min-width: 768px) {
     border: none;
   }
 }
@@ -42,7 +42,7 @@
     margin-bottom: 1rem;
   }
 
-  @media only screen and (min-width: 768px) {
+  @media (min-width: 768px) {
     border: none;
     flex-direction: row;
     justify-content: center;

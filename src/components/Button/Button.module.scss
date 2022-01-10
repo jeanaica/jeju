@@ -8,6 +8,7 @@
   color: var(--btn-primary);
   font-family: var(--font-secondary);
   letter-spacing: 2px;
+  cursor: pointer;
 
   &:hover {
     border-color: var(--btn-primary-hover);
@@ -16,5 +17,15 @@
 
   &:active {
     background-color: var(--btn-primary-active);
+  }
+
+  &:disabled {
+    cursor: not-allowed;
+    background-color: var(--btn-primary-light);
+    color: var(--color-secondary);
+
+    &:hover {
+      border-color: var(--color-border);
+    }
   }
 }
