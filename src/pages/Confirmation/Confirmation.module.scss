@@ -32,17 +32,17 @@
 .confirmation-box-group {
   display: flex;
   flex-wrap: wrap;
-  flex: 1;
   flex-direction: column;
 
-  @media (min-width: 768px) {
+  @media (min-width: 786px) {
     flex-direction: row;
-    justify-content: space-between;
     width: 100%;
 
     > div {
-      flex: 0 48%;
+      flex: 1;
+      min-width: 300px;
       margin-bottom: 0.5rem;
+      margin-right: 1rem;
     }
   }
 }

@@ -38,6 +38,8 @@ const Location: React.FC = (props) => {
           <LinkIcon />
           <a
             href="https://www.facebook.com/monalisakitchen.ph"
+            rel="noopener noreferrer"
+            target="_blank"
             className={`truncate`}
           >
             facebook.com/monalisakitchen.ph
