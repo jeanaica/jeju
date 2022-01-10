@@ -10,7 +10,7 @@ type Props = {
   onMenuClick(): void;
 };
 
-const SideBar: React.FC<Props> = ({ showMenu, marginTop, onMenuClick }) => {
+const SideBar: React.FC<Props> = ({ showMenu, onMenuClick }) => {
   const [isInitialLoad, setInitialLoad] = useState(false);
   const [activePath, setActivePath] = useState("story");
   const location = useLocation();
@@ -33,11 +33,7 @@ const SideBar: React.FC<Props> = ({ showMenu, marginTop, onMenuClick }) => {
 
   return (
     <div
-      style={
-        !isInitialLoad
-          ? { opacity: 0 }
-          : { opacity: 1, height: `calc(100% - ${marginTop}px)` }
-      }
+      style={!isInitialLoad ? { opacity: 0 } : { opacity: 1 }}
       className={`${styles["nav-link"]} 
       ${showMenu ? styles["visible"] : styles["hidden"]}`}
     >
