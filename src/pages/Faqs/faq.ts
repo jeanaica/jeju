@@ -1,7 +1,5 @@
 export type FaqType = Record<string, Array<Record<string, string>>>;
 
-// TODO: Update answers
-
 export const faq = {
   Photos: [
     {
@@ -86,6 +84,38 @@ export const faq = {
       question: "Do I have a giveaway?",
       answer:
         "The celebrants thought of the giveaways carefully providing a name for each. Just pick out yours and we do hope you appreciate it.",
+    },
+  ],
+  Venue: [
+    {
+      question: "Does the venue have a place to park my car?",
+      answer: `Yes, they do but the parking slots are only limited to 8 cars. Please coordinate with us to make sure your car has a spot.`,
+    },
+    {
+      question: "Where is the venue located?",
+      answer:
+        "It is in Marikina, 98 East Dela Paz Street, Barangay San Roque 1801 Marikina City, Philippines, near Ayala Feliz and Sta. Lucia Mall. Kindly make sure to check https://meowmarry.me/wedding for the exact location on google maps.",
+    },
+    {
+      question: "Is the venue big?",
+      answer:
+        "No. It only caters up to 60 guests since they only handle intimate weddings.",
+    },
+    {
+      question:
+        "Is the wedding ceremony and reception going to be held in the same place?",
+      answer:
+        "Yes. Since it is the pandemic we would like to limit the movements of each guest to one place, so they don't have to commute or travel to a different location in one day.",
+    },
+    {
+      question: "What is my table number?",
+      answer:
+        "This will be given a month before the wedding. Kindly visit this site again for the information.",
+    },
+    {
+      question: "Will I be seating with the people I know?",
+      answer:
+        "Yes you will. Don't worry we won't torture you ...or will we? XD",
     },
   ],
   Others: [

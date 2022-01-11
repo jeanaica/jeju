@@ -124,6 +124,9 @@ a {
   overflow: hidden;
   text-overflow: ellipsis;
 
+  direction: rtl;
+  text-align: left;
+
   &:hover {
     color: var(--color-link-hover);
     text-decoration: underline;

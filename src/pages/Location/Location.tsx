@@ -19,7 +19,7 @@ const Location: React.FC = (props) => {
         </div>
         <div className={`${styles["info"]}`}>
           <AccessTimeIcon />
-          <span>5:30 PM</span>
+          <span>5:30 PM (UTC +8)</span>
         </div>
         <div className={`${styles["info"]}`}>
           <PlaceIcon />
