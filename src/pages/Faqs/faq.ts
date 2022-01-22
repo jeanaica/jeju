@@ -94,7 +94,7 @@ export const faq = {
     {
       question: "Where is the venue located?",
       answer:
-        "It is in Marikina, 98 East Dela Paz Street, Barangay San Roque 1801 Marikina City, Philippines, near Ayala Feliz and Sta. Lucia Mall. Kindly make sure to check https://meowmarry.me/wedding for the exact location on google maps.",
+        "Kindly check https://meowmarry.me/wedding for the exact location on google maps.",
     },
     {
       question: "Is the venue big?",
