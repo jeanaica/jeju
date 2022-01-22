@@ -12,16 +12,12 @@ const Landing: React.FC = () => {
 
   const { login } = useAuth();
 
-  useEffect(() => {
-    if (!id) {
-      navigate("/story");
-    }
-  }, [id]);
-
   const handleAttend = (attend: "YES" | "MAYBE" | "NO") => {
     if (id) {
       login(id);
       navigate("/rsvp", { state: { attend } });
+    } else {
+      navigate("/story");
     }
   };
 
