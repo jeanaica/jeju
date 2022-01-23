@@ -7,7 +7,7 @@ export const faqPublic = {
     },
     {
       question: "Why was I not invited?",
-      answer: `We want to. Unfortunately, due to our current situation(i.e Pandemic, IATF, and budget) we are tied to limit our number of guests.`,
+      answer: `We want to. Unfortunately, due to our current situation(i.e. Pandemic, IATF) we are tied to limit our number of guests.`,
     },
     {
       question: "What if I want to bring someone to the event?",
@@ -16,7 +16,7 @@ export const faqPublic = {
     {
       question: "Will I receive a paper invite?",
       answer:
-        "No. We find that this is the most practical approach to giving out our invites. Less carbon footprint, less money spent :)",
+        "No. We find that this is the most practical approach to giving out our invites. Less carbon footprint. :)",
     },
   ],
   Photos: [

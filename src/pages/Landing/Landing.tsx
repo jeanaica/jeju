@@ -14,33 +14,44 @@ const Landing: React.FC = () => {
   const [isValid, setIsValid] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
 
-  const { login, logout, token } = useAuth();
+  const { login, logout, token, authenticated } = useAuth();
 
   useEffect(() => {
-    if (token === id) {
-      login(id);
-      navigate("/rsvp");
-    } else {
-      if (id) {
-        setIsLoading(true);
+    setIsLoading(true);
 
-        validateToken(id)
-          .then((res) => {
-            if (res === id) {
-              logout();
-
-              setIsValid(true);
-            }
-          })
-          .catch(() => {
-            setIsValid(false);
-          })
-          .finally(() => {
-            setIsLoading(false);
-          });
-      }
+    if (id) {
+      handleToken(id);
+    } else if (token) {
+      handleToken(token);
     }
+
+    return () => {
+      setIsLoading(false);
+    };
   }, []);
+
+  const handleToken = (argToken: string) => {
+    validateToken(argToken)
+      .then((res) => {
+        if (res) {
+          if (authenticated && res === token) {
+            navigate("/rsvp");
+          } else {
+            logout();
+          }
+
+          setIsValid(true);
+        } else {
+          logout();
+        }
+      })
+      .catch(() => {
+        setIsValid(false);
+      })
+      .finally(() => {
+        setIsLoading(false);
+      });
+  };
 
   const handleAttend = (attend: "YES" | "MAYBE" | "NO") => {
     if (id) {
