@@ -10,6 +10,8 @@ const validateToken = async (token?: string | null) => {
     querySnapshot.forEach((doc) => {
       if (token === doc.id) {
         validateToken = doc.id;
+
+        return validateToken;
       }
     });
   }

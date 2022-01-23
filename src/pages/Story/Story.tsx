@@ -23,7 +23,7 @@ const Story: React.FC = () => {
           <i>Lifetime as</i>
         </span>
         <h2 className={`${styles["name"]}`}>{`Mr. & Mrs. ${
-          authenticated ? "Alinsub" : ""
+          authenticated ? "Alinsub" : "Meow"
         }`}</h2>
       </div>
     </div>

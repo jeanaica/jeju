@@ -2,9 +2,13 @@ import React from "react";
 import { faq, FaqType } from "./faq";
 import FaqItem from "./FaqSection";
 import styles from "./Faqs.module.scss";
+import useAuth from "hooks/useAuth";
+import { faqPublic } from "./faqPublic";
 
 const Faqs: React.FC = () => {
-  const items: FaqType = faq;
+  const { authenticated } = useAuth();
+
+  const items: FaqType = authenticated ? faq : faqPublic;
 
   return (
     <div className={`${styles["container"]}`}>

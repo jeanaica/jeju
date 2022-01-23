@@ -1,4 +1,5 @@
 import { FC, useCallback, useEffect, useState } from "react";
+import ReactLoading from "react-loading";
 
 import Alert from "components/Alert";
 import Button from "components/Button";
@@ -15,6 +16,8 @@ const ConfirmationSection: FC = () => {
     Record<string, Record<string, string | boolean | number>>
   >({});
   const { token } = useAuth();
+  const [isLoading, setIsLoading] = useState(false);
+
   // const [tableNumber, setTableNumber] = useState(0);
   const location = useLocation();
 
@@ -23,6 +26,8 @@ const ConfirmationSection: FC = () => {
 
   useEffect(() => {
     if (token) {
+      setIsLoading(true);
+
       getGuest(token)
         .then((guest) => {
           guest?.group.forEach(
@@ -60,8 +65,17 @@ const ConfirmationSection: FC = () => {
           );
 
           // setTableNumber(guest?.table_number);
+
+          setTimeout(() => {
+            setIsLoading(false);
+          }, 500);
         })
-        .catch((err) => console.log(err));
+        .catch((err) => {
+          console.log(err);
+          setTimeout(() => {
+            setIsLoading(false);
+          }, 500);
+        });
     }
 
     return () => {
@@ -110,6 +124,14 @@ const ConfirmationSection: FC = () => {
     [guestList, token]
   );
 
+  const renderLoading = () => {
+    return (
+      <div className={`${styles["loading"]}`}>
+        <ReactLoading type="cylon" color="#052441" />
+      </div>
+    );
+  };
+
   return (
     <div className={`${styles["confirmation"]}`}>
       <Title header={`R.S.V.P.`} />
@@ -139,21 +161,19 @@ const ConfirmationSection: FC = () => {
           className={`${styles["form-container"]}`}
         >
           <div className={`${styles["confirmation-box-group"]}`}>
-            {Object.keys(guestList).length > 0 ? (
-              Object.keys(guestList).map((name) => (
-                <ConfirmationBox
-                  key={name}
-                  onClick={handleBoxClick}
-                  name={name}
-                  isGoing={!!guestList[name].isAttending}
-                  hasAdditionalGuest={
-                    guestList[name].number_of_additional_guests
-                  }
-                />
-              ))
-            ) : (
-              <div></div>
-            )}
+            {isLoading
+              ? renderLoading()
+              : Object.keys(guestList).map((name) => (
+                  <ConfirmationBox
+                    key={name}
+                    onClick={handleBoxClick}
+                    name={name}
+                    isGoing={!!guestList[name].isAttending}
+                    hasAdditionalGuest={
+                      guestList[name].number_of_additional_guests
+                    }
+                  />
+                ))}
           </div>
           <Button
             type="submit"

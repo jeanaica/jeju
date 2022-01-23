@@ -27,7 +27,7 @@ const Footer: React.FC<Props> = ({ backToTop }) => {
       ) : null}
       <span
         className={`font-secondary text--xs`}
-      >{`© 2021 By Jeanaica & Junar.`}</span>
+      >{`© 2021-2022 By Jeanaica & Junar.`}</span>
       <br />
       <span
         className={`font-secondary text--xs`}

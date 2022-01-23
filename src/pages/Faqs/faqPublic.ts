@@ -1,11 +1,29 @@
-export type FaqType = Record<string, Array<Record<string, string>>>;
-
-export const faq = {
+export const faqPublic = {
+  Invitations: [
+    {
+      question:
+        "I was invited but why can't I see the other pages on this website?",
+      answer: `Please check our message in messenger for the link with the invite code.`,
+    },
+    {
+      question: "Why was I not invited?",
+      answer: `We want to. Unfortunately, due to our current situation(i.e Pandemic, IATF, and budget) we are tied to limit our number of guests.`,
+    },
+    {
+      question: "What if I want to bring someone to the event?",
+      answer: `Please check your invite in the RSVP page if you have additional guests that you can bring and how many. If your invite says you can have an additional guest, then the answer is yes. If not, please do not bring an additional guest. We are bound by the IATF guidelines and there is a max capacity at the venue.`,
+    },
+    {
+      question: "Will I receive a paper invite?",
+      answer:
+        "No. We find that this is the most practical approach to giving out our invites. Less carbon footprint, less money spent :)",
+    },
+  ],
   Photos: [
     {
       question: "Can I take pictures during the ceremony?",
       answer:
-        "No. We have a team to capture the special moments that we share. Having phones or cameras out will ruin the event for the celebrants. Please be mindful. Read this FAQ page. You know us. We are warning you. LOL. But seriously, DON'T.",
+        "No. We have a team to capture the special moments that we share.",
     },
     {
       question: "What hashtag should I use for sharing photos?",
@@ -13,10 +31,6 @@ export const faq = {
     },
   ],
   Schedule: [
-    {
-      question: "When should I arrive?",
-      answer: "It is good to arrive at 5:30PM.",
-    },
     {
       question:
         "Something came up, I don't think I can make it to the wedding, What should I do?",
@@ -27,12 +41,12 @@ export const faq = {
       question:
         "I changed my mind and I have decided that I want to go, What should I do?",
       answer:
-        "Update your RSVP in this site(https://meowmarry.me/rsvp) or just message us using the links in the contact us page. We love you even though you are fickle-minded.",
+        "Update your RSVP in this site or just message us using the links in the contact us page. We love you even though you are fickle-minded.",
     },
     {
       question: "Until when can I change my mind if I want to go or not?",
       answer:
-        "The RSVP will be locked on March 1, 2022. Please finalize the schedule by then.",
+        "The form will be locked on March 1, 2022. Please finalize the schedule by then.",
     },
   ],
   Attire: [
@@ -67,35 +81,7 @@ export const faq = {
       answer: "No. The venue strictly does not allow bringing of food.",
     },
   ],
-  Gifts: [
-    {
-      question: "What kind of gifts should I bring?",
-      answer:
-        "We appreciate the thought but the celebrants do not know how to respond to receiving gifts. You are our presents, just be there and enjoy the moment with us.",
-    },
-    {
-      question:
-        "Considering the question before this, we appreciate practicality. What is our GCASH number/Bank Account details for cash gifts?",
-      answer: "We will print out QR codes on the day itself.",
-    },
-  ],
-  Giveaways: [
-    {
-      question: "Do I have a giveaway?",
-      answer:
-        "The celebrants thought of the giveaways carefully providing a name for each. Just pick out yours and we do hope you appreciate it.",
-    },
-  ],
   Venue: [
-    {
-      question: "Does the venue have a place to park my car?",
-      answer: `Yes, they do but the parking slots are only limited to 8 cars. Please coordinate with us to make sure your car has a spot.`,
-    },
-    {
-      question: "Where is the venue located?",
-      answer:
-        "It is in Marikina, 98 East Dela Paz Street, Barangay San Roque 1801 Marikina City, Philippines, near Ayala Feliz and Sta. Lucia Mall. Kindly make sure to check https://meowmarry.me/wedding for the exact location on google maps.",
-    },
     {
       question: "Is the venue big?",
       answer:
@@ -120,25 +106,12 @@ export const faq = {
   ],
   Others: [
     {
-      question: "What if I want to bring someone to the event?",
-      answer: `Please check your invite in the RSVP page if you have additional guests that you can bring and how many. If your invite says you can have an additional guest, then the answer is yes. If not, please do not bring an additional guest. We are bound by the IATF guidelines and there is a max capacity at the venue.`,
-    },
-    {
-      question: "What is the event's program?",
-      answer: `We are still in the process of finalizing it. We will update this website for future announcements.`,
-    },
-    {
-      question: "Will I receive a paper invite?",
-      answer:
-        "No. We find that this is the most practical approach to giving out our invites. Less carbon footprint, less money spent :)",
-    },
-    {
       question: "Who designed this website?",
       answer: "Jeanaica did. ** XD ** ",
     },
     {
       question: "Who made this website?",
-      answer: "Junar and Jeanaica",
+      answer: "We both did. :). Junar and Jeanaica",
     },
     {
       question: "I want something like this, who can I contact?",
