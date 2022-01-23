@@ -155,33 +155,35 @@ const ConfirmationSection: FC = () => {
 
       <div className={`${styles["confirmation-section"]}`}>
         <h6 className={`${styles["information"]}`}>Yes, we'll be there</h6>
-        <form
-          name="confirmationForm"
-          onSubmit={handleSubmit}
-          className={`${styles["form-container"]}`}
-        >
-          <div className={`${styles["confirmation-box-group"]}`}>
-            {isLoading
-              ? renderLoading()
-              : Object.keys(guestList).map((name) => (
-                  <ConfirmationBox
-                    key={name}
-                    onClick={handleBoxClick}
-                    name={name}
-                    isGoing={!!guestList[name].isAttending}
-                    hasAdditionalGuest={
-                      guestList[name].number_of_additional_guests
-                    }
-                  />
-                ))}
-          </div>
-          <Button
-            type="submit"
-            className={`${styles["confirmation-button"]} text--lg`}
+        {isLoading ? (
+          renderLoading()
+        ) : (
+          <form
+            name="confirmationForm"
+            onSubmit={handleSubmit}
+            className={`${styles["form-container"]}`}
           >
-            SUBMIT
-          </Button>
-        </form>
+            <div className={`${styles["confirmation-box-group"]}`}>
+              {Object.keys(guestList).map((name) => (
+                <ConfirmationBox
+                  key={name}
+                  onClick={handleBoxClick}
+                  name={name}
+                  isGoing={!!guestList[name].isAttending}
+                  hasAdditionalGuest={
+                    guestList[name].number_of_additional_guests
+                  }
+                />
+              ))}
+            </div>
+            <Button
+              type="submit"
+              className={`${styles["confirmation-button"]} text--lg`}
+            >
+              SUBMIT
+            </Button>
+          </form>
+        )}
       </div>
     </div>
   );
