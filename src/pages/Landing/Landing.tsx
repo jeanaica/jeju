@@ -23,6 +23,8 @@ const Landing: React.FC = () => {
       handleToken(id);
     } else if (token) {
       handleToken(token);
+    } else {
+      setIsLoading(false);
     }
 
     return () => {
