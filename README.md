@@ -7,7 +7,7 @@
     - FAQs
     - Contact Us
 
-[Public Website]((https://jeju-3271f.web.app))
+[Public Website](https://jeju-3271f.web.app)
 [Guest Website](https://jeju-3271f.web.app/ezC3MCrxP9p93O6bH2sn)
 
 ## Prerequisites:
